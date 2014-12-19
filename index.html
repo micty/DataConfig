@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=gb2312" http-equiv="Content-Type" />
+    <title>数据配置系统</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <style type="text/css" id="styleCombinedValue">.combinedValue{display: none;}</style>
+</head>
+<body>
+    <div id="divContainer">
+        <div id="divHeader">
+            <div id="divBanner">
+                数据配置系统
+            </div>
+           
+            
+            <div id="divMenus">
+                <ul>
+                     <li>
+                        <a id="ID_toggleCombinedValue" href="javascript:" onclick="UI.toggleCombinedValue(this)">显示复合值</a>
+                    </li>
+                    <li><a href="javascript:Parser.Dom.apply()">应用修改</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="divDom">
+        </div>
+        <div id="divJson">
+            <button onclick="Parser.Json.setText()">▼解析成Json</button>
+            <button onclick="Parser.Json.parseText()">▲从Json解析</button>
+            <button onclick="Parser.Json.replaceValues()">▲解析并进行值替换</button>
+            
+            <textarea id="txtJson"></textarea>
+        </div>
+    </div>
+    <!--TPL.Combined
+        <table class="combinedTable" cellpadding="0" cellspacing="0"  >
+            <tr>
+                <td rowspan="2" class="combinedName" data="{name}" onclick="UI.showMenu(this)">
+                    <ul style="display:none">
+                        <li><a href="javascript:" onclick="UI.moveUp(this);">↑上移</a></li>
+                        <li><a href="javascript:" onclick="UI.moveDown(this);">↓下移</a></li>
+                        <li><a href="javascript:" onclick="UI.remove(this);">×删除</a></li>
+                        <li><a href="javascript:" onclick="UI.add(this);">＋添加</a></li>
+                        <li><a href="javascript:" onclick="UI.clone(this);">⊙克隆</a></li>
+                        <li><a href="javascript:" onclick="UI.rename(this);">≡改名</a></li>
+                        <li style="display:none"><a href="javascript:" onclick="UI.revalue(this);">改值</a></li>
+                        <li ><a href="javascript:" onclick="void UI.toggleCurrentCombinedValue(this);">显示复合值</a></li>
+                    </ul>
+                </td>
+                <td class="combinedValue" data="{combinedValue}" ondblclick="UI.toEdit(this)">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {value}
+                </td>
+            </tr>
+        </table>
+    TPL.Combined-->
+    
+    <!--TPL.Leaf
+        <table class="leafTable" cellpadding="1" cellspacing="1" >
+            <tr>
+                <td class="leafName" data="{name}" onclick="UI.showMenu(this)">
+                    <ul style="display:none">
+                        <li><a href="javascript:" onclick="UI.moveUp(this);">↑上移</a></li>
+                        <li><a href="javascript:" onclick="UI.moveDown(this);">↓下移</a></li>
+                        <li><a href="javascript:" onclick="UI.remove(this);">×删除</a></li>
+                        <li><a href="javascript:" onclick="UI.clone(this);">⊙克隆</a></li>
+                        <li><a href="javascript:" onclick="UI.rename(this);">≡改名</a></li>
+                    </ul>
+                </td>
+                <td class="leafValue" data="{value}" ondblclick="UI.toEdit(this)">
+                    
+                </td>
+            </tr>
+        </table>
+    TPL.Leaf-->
+
+
+    <script type="text/javascript" src="lib/miniquery.pack.js" ></script>
+    <script type="text/javascript" src="index.js" ></script>
+
+</body>
+</html>
